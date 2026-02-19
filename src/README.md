@@ -4,16 +4,22 @@
 
 ### `Nodes`
 
--  Purpose: individual agent personas (e.g., supervisor, worker, researcher).
+-  Purpose: the functional logic that takes state + context as input and outputs a new state.
 
-### `States`
+### `state.py`
 
-- Purpose: individual agent personas (e.g., supervisor, worker, researcher).
+- Purpose: the schema of a graph. 
+> Note: only one state per graph, but each graph may contain multiple subgraphs.
 
 ### `Tools`
 
-- Purpose: Functions to bind as `ToolNodes` - callable by other 'agent' nodes.
+- Purpose: Specialized nodes that can be activated in the `messages` variable (i.e., 'tool call') and produce a new state.
 
 ### `graph.py`
 
 - Purpose: Orchastrate the behavior of nodes.
+
+### `context.py`
+
+- Purpose: the static personality of the agent.
+> Note: A parent's context is unidirectionally available to downstream graphs.
