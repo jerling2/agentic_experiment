@@ -26,8 +26,14 @@ uv sync
 
 This will create a virtual environment and install all required packages specified in `pyproject.toml`.
 
-### Run the Project
+### Run the Script
 
 ```bash
 uv run main.py
+```
+
+### Run the LangGraph Dev Server
+
+```bash
+langgraph dev
 ```
