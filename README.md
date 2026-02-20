@@ -35,5 +35,5 @@ uv run main.py
 ### Run the LangGraph Dev Server
 
 ```bash
-langgraph dev
+uv run langgraph dev
 ```
