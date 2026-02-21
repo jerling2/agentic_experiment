@@ -18,10 +18,12 @@ class OutputState(BaseModel):
             "next invocation to continue the conversation."
         )
     )
+    demo_result: str = ""
 
 
 class NodeDemoState(BaseModel):
     success: bool = False
+    demo_result: str = ""
 
 
 class AppState(InputState, OutputState, NodeDemoState):

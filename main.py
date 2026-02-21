@@ -1,20 +1,20 @@
-from src import graph, AppContext
+from fastmcp import FastMCP
+from src import AppContext
+from src.graph import graph
 
-def main():
-    inputs = {
-        "input": "LangGraph demo!",
-        "results": ""
-    }
+mcp = FastMCP("MyAgent")
 
-    context_instance = AppContext(description="My first langgraph setup")
+context_instance = AppContext(name="My first langgraph setup")
 
-    final_output = graph.invoke(
-        inputs,
-        context=context_instance
+
+@mcp.tool()
+async def entrypoint(query: str) -> str:
+    result = await graph.ainvoke(
+        {'input': query, 'results': ''},
+        context=context_instance,
     )
-    print(f"Inputs: {final_output['input']}")
-    print(f"Results: {final_output['results']}")
+    return result['demo_result']
 
 
 if __name__ == "__main__":
-    main()
+    mcp.run(transport="http")
