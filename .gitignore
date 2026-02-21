@@ -2,6 +2,7 @@
 .env
 .langgraph_api/
 .venv
+.claude/*.local*
 
 
 # Python-generated files
