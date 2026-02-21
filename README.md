@@ -40,17 +40,20 @@ uv run langgraph dev
 
 ### Debug with `debugpy`
 
-1. Instrument the MCP server to listen for a remote `debugpy` on port 5678.
+1. **(VSCode)** Attach the debugger:
+   - Open the **Run and Debug** panel (`Ctrl+Shift+D` / `Cmd+Shift+D`)
+   - Select **"Python Debugger: Remote Attach"** from the dropdown
+   - Press **F5** or click on the "Run and Debug" Icon to attach
+
+
+2. Instrument the MCP server to listen for a remote `debugpy` on port 5678.
 ```bash
 uv run python -m debugpy --listen 5678 --wait-for-client main.py
 
 >> Starting MCP server '<Server Name>' with transport 'http' on http://127.0.0.1:8000/mcp
 ```
+> Note: if this command hangs, it's most likely waiting to handshake the debugger.
 
-2. **(VSCode)** Attach the debugger:
-   - Open the **Run and Debug** panel (`Ctrl+Shift+D` / `Cmd+Shift+D`)
-   - Select **"Python Debugger: Remote Attach"** from the dropdown
-   - Press **F5** or click on the "Run and Debug" Icon to attach
 
 3a. (Optional - Global Download) Download MCP Inspector CLI Tool
 
