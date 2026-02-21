@@ -66,7 +66,7 @@ npm install -g @modelcontextprotocol/inspector 2>&1
 then run,
 
 ```bash
-mcp-inspector http://localhost:8000/mcp
+mcp-inspector --transport http --server-url http://localhost:8000/mcp
 ```
 
 3b. (Optional - Single Use) Run MCP Inspector CLI Tool
@@ -74,7 +74,7 @@ mcp-inspector http://localhost:8000/mcp
 In a seprate terminal, run:
 
 ```bash
-npx @modelcontextprotocol/inspector http://localhost:8000/mcp
+npx @modelcontextprotocol/inspector --transport http --server-url http://localhost:8000/mcp
 ```
 
 That's about it: set breakpoints in the code, and use the mcp-inspector UI to test the server.
